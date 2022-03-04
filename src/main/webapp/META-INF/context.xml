@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Caractéristiques de notre pool de connexion 
+ - maxTotal="100" : on peut avoir au MAX 100 connexions simultanées
+ - maxIdle="30" : si on a plus de 30 connexions de dispos, on va en relacher
+ - maxWaitMillis="10000" : on attends au maximum 10s qu'une connexion soit dispo, sinon, on lève une exception
+-->
+<Context>
+	<Resource
+		name="jdbc/pool_cnx"
+		
+		driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+		type="javax.sql.DataSource"
+		
+		url="jdbc:sqlserver://localhost;databasename=BDD_DEMO;trustServerCertificate=true"
+		username="utilisateurBDD" 
+		password="Pa$$w0rd"
+		
+		maxTotal="100" 
+		maxIdle="30"
+		maxWaitMillis="10000"
+	/>
+</Context>
